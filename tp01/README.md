@@ -14,7 +14,7 @@ Pour débuter l'installation, il est nécessaire de récupérer l'app sur **`Git
 git clone https://github.com/GABLRM/2023-2024-DevOps.git
 ```
 
-Une fois le git clone, rendez-vous dans le dossier **`TP01`** et installer les dépendances avec la commande suivant : 
+Une fois le git clone, rendez-vous dans le dossier **`TP01`** et installer les dépendances avec la commande suivante : 
 
 ```
 npm init -y
