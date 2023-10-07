@@ -1,10 +1,10 @@
-# DevOps : tp - wik-dps-tp01
+# DevOps : tp-wik-dps-tp01
 
 ## I - Prérequis
 
 Pour lancer le projet, vous devez créer une variable d'environnement **`PING_LISTEN_PORT`** qui contiendra le port que vous souhaitez que l'app écoute.
 
-Il est également nécessaire d'avoir **`Node`** et **`Npm`** installés sur votre machine machine.
+Il est également nécessaire d'avoir **`Node`** et **`Npm`** installés sur votre machine.
 
 ## II - Installation
 
