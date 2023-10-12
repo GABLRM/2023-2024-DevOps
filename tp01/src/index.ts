@@ -11,5 +11,5 @@ const myServer = http.createServer((req, res) => {
  });
 
  myServer.listen(process.env.PING_LISTEN_PORT ?? 8080, () => {
-    console.log('Server is running on port')
+    console.log('Server is running...')
  });
