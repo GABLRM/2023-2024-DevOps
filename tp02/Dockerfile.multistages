@@ -1,0 +1,30 @@
+# Étape 1 : Build de l'application
+FROM node:20 AS builder
+
+# Création d'un répertoire de travail
+WORKDIR /app
+
+# Copie les fichiers de l'API dans le conteneur
+COPY . .
+
+# Installation les dépendances de l'API
+RUN npm install
+
+# Compilation de l'application
+RUN npm run build
+
+# Étape 2 : Exécution de l'application
+FROM node:20
+
+# Création d'un utilisateur non privilégié pour l'exécution de l'API
+RUN useradd -m appuser
+USER appuser
+
+# Copie uniquement les fichiers de l'application compilée depuis l'étape précédente
+COPY --chown=appuser:appuser --from=builder /app /app
+
+# Exposition du port sur lequel l'API écoute
+EXPOSE 3000
+
+# Commande pour démarrer l'API
+CMD npm start
