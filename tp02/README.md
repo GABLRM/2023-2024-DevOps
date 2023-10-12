@@ -4,7 +4,7 @@
 
 Vous devez créer un **`DockerFile`** dans le même dossier que l'api développé précèdemment, comme celui-ci :
 
-Le fichier du [Dockerfile avec un seul stage](..\tp01\Dockerfile.onestage)
+Le fichier du [Dockerfile avec un seul stage](../tp01/Dockerfile.onestage)
 
 ```Dockerfile
 # Utilisation d'une image de base Node.js avec TypeScript
@@ -49,7 +49,7 @@ Le container est donc lancé sur **`le port 8080`**
 
 Vous devez créer un **`autre DockerFile`** ou modifier celui créé dernièrement, dans le même dossier que l'api développé précèdemment, comme ceci :
 
-Le fichier du [Dockerfile avec plusieurs stages](..\tp01\Dockerfile.multistages)
+Le fichier du [Dockerfile avec plusieurs stages](../tp01/Dockerfile.multistages)
 
 ```Dockerfile
 # Étape 1 : Build de l'application
