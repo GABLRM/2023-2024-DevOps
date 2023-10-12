@@ -1,0 +1,21 @@
+# Utilisation d'une image de base Node.js avec TypeScript
+FROM node:20
+
+# Création d'un utilisateur non privilégié pour exécuter l'API
+RUN useradd -m appuser
+USER appuser
+
+# Création d'un répertoire pour le code de l'API
+WORKDIR /app
+
+# Copie les fichiers du projet dans le conteneur
+COPY --chown=appuser:appuser . .
+
+# Installation des dépendances de l'API
+RUN npm install
+ 
+# Exposition du port sur lequel l'API écoute
+EXPOSE 8080
+
+# Commande pour démarrer l'API
+CMD npm start 

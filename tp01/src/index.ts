@@ -1,7 +1,5 @@
 import http from "http";
 
-
-
 const myServer = http.createServer((req, res) => {
     if (req.url === "/ping" && req.method==="GET")  {
         res.write(JSON.stringify(req.headers));
@@ -12,6 +10,6 @@ const myServer = http.createServer((req, res) => {
     }
  });
 
- myServer.listen(process.env.PING_LISTEN_PORT, () => {
-    console.log('Server is running on port ' + process.env.PING_LISTEN_PORT + '. Go to http://localhost:' + process.env.PING_LISTEN_PORT +'/ping')
+ myServer.listen(process.env.PING_LISTEN_PORT ?? 8080, () => {
+    console.log('Server is running on port')
  });
