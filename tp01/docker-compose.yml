@@ -1,0 +1,35 @@
+# Version de l'API Docker Compose à utiliser pour lire ce fichier
+version: '3.8'
+
+# Déclaration des services
+services:
+  my_api:
+
+    # Définition du Dockerfile à build et à utiliser
+    build:
+      context: .
+      dockerfile: Dockerfile.onestage
+
+    expose:
+      - '8080'
+
+    # Nombre de réplicas souhaités du même container 
+    deploy:
+      replicas: 4
+
+    environment:
+      - PING_LISTEN_PORT=8080
+
+    restart: always
+
+  proxy:
+    image: nginx:latest
+
+    volumes:
+      - ./proxy.conf:/etc/nginx/conf.d/proxy.conf
+
+    ports:
+      - 8081:8080
+
+    depends_on:
+      - my_api
